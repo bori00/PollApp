@@ -48,7 +48,7 @@ function RegistrationForm() {
     const history = useHistory();
 
     useEffect(() => {
-        setUserIsAdmin(API_AUTH.getCurrentUserRole() === 'ADMIN');
+        // setUserIsAdmin(API_AUTH.getCurrentUserRole() === 'ADMIN');
     }, [error, success])
 
     function handleFormChange(name, value) {

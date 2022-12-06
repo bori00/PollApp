@@ -50,11 +50,8 @@ function getCurrentUser() {
     return  JSON.parse(localStorage.getItem(USER_KEY))
 }
 
-function getCurrentUserRole() {
-     if (localStorage.getItem(USER_KEY) !== null) {
-         return  JSON.parse(localStorage.getItem('user')).role;
-     }
-     return null;
+function isUserAuthenticated() {
+    return localStorage.getItem(USER_KEY) !== null;
 }
 
 function getCurrentUserName() {
@@ -73,22 +70,12 @@ function authHeader() {
     }
 }
 
-function guaranteeUserHasRole(role, history) {
-    if (getCurrentUserRole() !== role) {
-        history.push("/login");
-        window.location.reload();
-        window.alert("Please sign in with a " + role + " account to access this" +
-            " functionality.");
-    }
-}
-
 export {
     login,
     setActiveUser,
     logout,
     getCurrentUser,
-    getCurrentUserRole,
+    isUserAuthenticated,
     authHeader,
-    guaranteeUserHasRole,
     getCurrentUserName
 };

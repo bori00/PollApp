@@ -11,7 +11,7 @@ function ClientConsumptionMonitoringContainer() {
     const history = useHistory();
 
     useEffect(() => {
-        API_AUTH.guaranteeUserHasRole('CLIENT', history);
+        // API_AUTH.guaranteeUserHasRole('CLIENT', history);
         API_NOTIFICATIONS.setupRoleSpecificNotifications();
     }, [])
 

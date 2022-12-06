@@ -58,9 +58,9 @@ function onDeviceEnergyConsumptionThresholdPassed(message) {
 }
 
 function setupRoleSpecificNotifications() {
-    if (AUTH_API.getCurrentUserRole() === "CLIENT") {
-        subscribeToClientNotifications();
-    }
+    // if (AUTH_API.getCurrentUserRole() === "CLIENT") {
+    //     subscribeToClientNotifications();
+    // }
 }
 
 export {

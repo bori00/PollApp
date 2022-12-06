@@ -12,7 +12,7 @@ function ClientDeviceMonitoringContainer() {
 
     useEffect(() => {
         API_NOTIFICATIONS.setupRoleSpecificNotifications();
-        API_AUTH.guaranteeUserHasRole('CLIENT', history);
+        // API_AUTH.guaranteeUserHasRole('CLIENT', history);
     })
 
     return (

@@ -10,10 +10,10 @@ const textStyle = {
 };
 
 function NavigationBar() {
-    const [userRole, setUserRole] = useState(null);
+    const [userAuthenticated, setUserAuthenticated] = useState(null);
 
     useLayoutEffect(() => {
-        setUserRole(API_AUTH.getCurrentUserRole());
+        setUserAuthenticated(API_AUTH.isUserAuthenticated());
     });
 
     return (
@@ -27,7 +27,7 @@ function NavigationBar() {
                 <Nav className="mr-auto" navbar>
 
                     {
-                        userRole === 'ADMIN' &&
+                        userAuthenticated &&
                         (
                             <Fragment>
                                 <UncontrolledDropdown nav inNavbar>
@@ -64,41 +64,7 @@ function NavigationBar() {
                     }
 
                     {
-                        userRole === 'CLIENT' &&
-                        <Fragment>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle style={textStyle} nav caret>
-                                    Client Menu
-                                </DropdownToggle>
-                                <DropdownMenu right>
-
-                                    <DropdownItem>
-                                        <NavLink href="/client-devices-monitoring">My Devices</NavLink>
-                                    </DropdownItem>
-
-                                    <DropdownItem>
-                                        <NavLink href="/client-consumption-monitoring">Consumption Updates</NavLink>
-                                    </DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
-
-
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle style={textStyle} nav caret>
-                                    Account
-                                </DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>
-                                        <NavLink href="/logout">Logout</NavLink>
-                                    </DropdownItem>
-                                </DropdownMenu>
-
-                            </UncontrolledDropdown>
-                        </Fragment>
-                    }
-
-                    {
-                        userRole === null &&
+                        !userAuthenticated &&
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle style={textStyle} nav caret>
                                 Account

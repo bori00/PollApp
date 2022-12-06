@@ -10,7 +10,7 @@ function AdminUserManagementContainer() {
     const history = useHistory();
 
     useEffect(() => {
-        API_AUTH.guaranteeUserHasRole('ADMIN', history);
+        // API_AUTH.guaranteeUserHasRole('ADMIN', history);
     })
 
     return (
