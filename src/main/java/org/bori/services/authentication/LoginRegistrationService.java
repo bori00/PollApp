@@ -6,7 +6,7 @@ import org.bori.dtos.LoginJwtDTO;
 import org.bori.dtos.NewUserDTO;
 import org.bori.dtos.UserDTO;
 import org.bori.entities.User;
-import org.bori.repositories.UserRepository;
+import org.bori.repositories.basic.UserRepository;
 import org.bori.services.authentication.jwt.JwtUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +20,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

@@ -9,7 +9,7 @@ public class DuplicateResourceException extends CustomException {
     private static final HttpStatus httpStatus = HttpStatus.CONFLICT;
 
     public DuplicateResourceException(String resource) {
-        super(MESSAGE,httpStatus, resource, new ArrayList<>());
+        super(MESSAGE, httpStatus, resource, new ArrayList<>());
     }
 
 }

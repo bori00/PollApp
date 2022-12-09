@@ -18,6 +18,6 @@ function Validate(value, rules) {
     }
 
     return isValid;
-};
+}
 
 export default Validate;

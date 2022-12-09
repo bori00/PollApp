@@ -1,7 +1,7 @@
 package org.bori.services.authentication;
 
 import org.bori.entities.User;
-import org.bori.repositories.UserRepository;
+import org.bori.repositories.basic.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,6 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<User> optAdmin = userRepository.findByUsername(username);

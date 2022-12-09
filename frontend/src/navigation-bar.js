@@ -32,17 +32,17 @@ function NavigationBar() {
                             <Fragment>
                                 <UncontrolledDropdown nav inNavbar>
                                     <DropdownToggle style={textStyle} nav caret>
-                                    Admin Menu
+                                    Menu
                                     </DropdownToggle>
                                     <DropdownMenu right>
 
                                     <DropdownItem>
-                                        <NavLink href="/admin-device-management">Devices</NavLink>
+                                        <NavLink href="/poll-management">Poll Management</NavLink>
                                     </DropdownItem>
 
-                                    <DropdownItem>
-                                        <NavLink href="/admin-user-management">Users</NavLink>
-                                    </DropdownItem>
+                                    {/*<DropdownItem>*/}
+                                    {/*    <NavLink href="/admin-user-management">Users</NavLink>*/}
+                                    {/*</DropdownItem>*/}
 
 
                                     </DropdownMenu>

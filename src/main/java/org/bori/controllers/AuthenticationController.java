@@ -1,4 +1,4 @@
-package org.bori.controllers.handlers;
+package org.bori.controllers;
 
 import org.bori.controllers.handlers.exceptions.model.authentication.DuplicateUsernameException;
 import org.bori.dtos.NewUserDTO;

@@ -16,6 +16,7 @@ import ClientDeviceMonitoringContainer
     from "./client-device-monitoring/client-device-monitoring-container";
 import ClientConsumptionMonitoringContainer
     from "./client-consumption-monitoring/client-consumption-monitoring-container";
+import PollManagementContainer from "./poll-management/poll-management-container";
 
 function App() {
     return (
@@ -71,6 +72,12 @@ function App() {
                             exact
                             path='/client-consumption-monitoring'
                             render={() => <ClientConsumptionMonitoringContainer />}
+                        />
+
+                        <Route
+                            exact
+                            path='/poll-management'
+                            render={() => <PollManagementContainer />}
                         />
 
                         {/*Error*/}

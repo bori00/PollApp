@@ -1,7 +1,7 @@
 package org.bori.controllers.handlers.exceptions.model.authentication;
 
-import org.springframework.http.HttpStatus;
 import org.bori.controllers.handlers.exceptions.model.CustomException;
+import org.springframework.http.HttpStatus;
 
 import java.util.ArrayList;
 

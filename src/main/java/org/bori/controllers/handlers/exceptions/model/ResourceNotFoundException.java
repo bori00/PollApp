@@ -9,6 +9,6 @@ public class ResourceNotFoundException extends CustomException {
     private static final HttpStatus httpStatus = HttpStatus.NOT_FOUND;
 
     public ResourceNotFoundException(String resource) {
-        super(MESSAGE,httpStatus, resource, new ArrayList<>());
+        super(MESSAGE, httpStatus, resource, new ArrayList<>());
     }
 }

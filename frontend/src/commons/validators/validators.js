@@ -31,23 +31,23 @@ function Validate(value, rules) {
         switch (rule) {
             case 'isRequired':
                 currentValue = requiredValidator(value);
-                if (!currentValue) {errorMessages.push("Required value")};
+                if (!currentValue) {errorMessages.push("Required value")}
                 break;
             case 'minLength':
                 currentValue = minLengthValidator(value, rules[rule]);
-                if (!currentValue) {errorMessages.push("Minimum length: " + rules[rule])};
+                if (!currentValue) {errorMessages.push("Minimum length: " + rules[rule])}
                 break;
             case 'maxLength':
                 currentValue = maxLengthValidator(value, rules[rule]);
-                if (!currentValue) {errorMessages.push("Maximum length: " + rules[rule])};
+                if (!currentValue) {errorMessages.push("Maximum length: " + rules[rule])}
                 break;
             case 'email':
                 currentValue = emailValidator(value);
-                if (!currentValue) {errorMessages.push("Must be a valid email address")};
+                if (!currentValue) {errorMessages.push("Must be a valid email address")}
                 break;
             case 'minValue':
                 currentValue = minValueValidator(value, rules[rule]);
-                if (!currentValue) {errorMessages.push("Must be a value >= " + rules[rule])};
+                if (!currentValue) {errorMessages.push("Must be a value >= " + rules[rule])}
                 break;
             default: isValid = true;
         }
@@ -56,6 +56,6 @@ function Validate(value, rules) {
     }
 
     return {"valid": isValid, "errorMessages": errorMessages};
-};
+}
 
 export default Validate;

@@ -2,7 +2,7 @@ package org.bori.services.authentication;
 
 import org.bori.controllers.handlers.exceptions.model.authentication.AuthenticationRequiredException;
 import org.bori.entities.User;
-import org.bori.repositories.UserRepository;
+import org.bori.repositories.basic.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
