@@ -26,13 +26,13 @@ public class PollManagementController {
         this.pollManagementService = pollManagementService;
     }
 
-    @PostMapping("/close-poll")
-    @ResponseStatus(HttpStatus.OK)
-    void closePoll(@Valid @RequestBody String pollId) throws DuplicateUsernameException {
-        LOGGER.info(String.format("REQUEST - /close, for poll %s",
-                pollId));
-        // ...
-    }
+//    @PostMapping("/close-poll")
+//    @ResponseStatus(HttpStatus.OK)
+//    void closePoll(@Valid @RequestBody String pollId) throws DuplicateUsernameException {
+//        LOGGER.info(String.format("REQUEST - /close, for poll %s",
+//                pollId));
+//        // ...
+//    }
 
     @PostMapping("/create-poll")
     @ResponseStatus(HttpStatus.OK)

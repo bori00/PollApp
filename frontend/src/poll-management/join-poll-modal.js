@@ -30,10 +30,21 @@ let formControlsInit = {
 
 function JoinPollModal(props) {
 
+    const [active, setActive] = useState(props.addPollIntention);
     const [error, setError] = useState({ status: 0, errorMessage: null });
     const [success, setSuccess] = useState(0);
     const [formControls, setFormControls] = useState(formControlsInit);
     const [formIsValid, setFormIsValid] = useState(false);
+
+    useEffect(() => {
+        let updatedControls = { ...formControls };
+
+        updatedControls.code.value = null;
+        updatedControls.code.valid = false;
+
+        setFormControls(updatedControls);
+
+    }, [active])
 
     function closeModal() {
         props.onClose();

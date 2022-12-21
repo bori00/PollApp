@@ -57,42 +57,29 @@ let formControlsInit = {
     },
 };
 
-function getValueLabelDictionary(v) {
-    return { value: v, label: v }
-}
-
 function CreatePollModal(props) {
 
+    const [active, setActive] = useState(props.addPollIntention);
     const [error, setError] = useState({ status: 0, errorMessage: null });
     const [success, setSuccess] = useState(0);
     const [formControls, setFormControls] = useState(formControlsInit);
     const [formIsValid, setFormIsValid] = useState(false);
 
     useEffect(() => {
+        let updatedControls = { ...formControls };
 
-        // const getAllClientsCallback = (result, status, err) => {
-        //     if (result !== null && (status === 200 || status === 201)) {
-        //         let newFormControls = JSON.parse(JSON.stringify(formControls));
-        //
-        //         newFormControls.userName.possibleValues = [];
-        //         result.forEach(client => {
-        //             newFormControls.userName.possibleValues.push(getValueLabelDictionary(client.userName));
-        //         });
-        //
-        //         if (newFormControls.userName.possibleValues.length > 0) {
-        //             newFormControls.userName.value = newFormControls.userName.possibleValues[0].value;
-        //             newFormControls.userName.valid = true;
-        //         }
-        //
-        //         setFormControls(newFormControls);
-        //
-        //     } else {
-        //         setError((error) => ({ status: status, errorMessage: err }));
-        //     }
-        // }
-        //
-        // API_DEVICES.getAllClients(getAllClientsCallback);
-    }, [])
+        updatedControls.title.value = "";
+        updatedControls.title.valid = false;
+        updatedControls.question.value = "";
+        updatedControls.question.valid = false;
+        updatedControls.options.value = [];
+        updatedControls.options.valid = false;
+        updatedControls.newOption.value = "";
+        updatedControls.newOption.valid = false;
+
+        setFormControls(updatedControls);
+
+    }, [active])
 
     function closeModal() {
         props.onClose();

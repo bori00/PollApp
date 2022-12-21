@@ -13,7 +13,7 @@ import org.springframework.lang.Nullable;
 @Document("answers")
 public class Answer {
     @org.springframework.data.annotation.Id
-    private String Id;
+    private String id;
 
     @DBRef
     public User user;

@@ -7,7 +7,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +34,7 @@ public class Poll {
 
     private List<Option> options  = new ArrayList<>();
 
-    private List<Comment> recent_comments  = new ArrayList<>();
+    private List<Comment> recentComments = new ArrayList<>(); //last is the most recent
 
     public Poll(String title, String question, Long code, User user, List<Option> options,
                 List<Comment> recent_comments) {
@@ -44,14 +43,14 @@ public class Poll {
         this.code = code;
         this.user = user;
         this.options = options;
-        this.recent_comments = recent_comments;
+        this.recentComments = recent_comments;
     }
 
     public void addNewComment(Comment comment) {
         comment.setPoll(this);
-        recent_comments.add(comment);
-        if (this.recent_comments.size() > 5) {
-            recent_comments.remove(0);
+        recentComments.add(comment);
+        if (this.recentComments.size() > 5) {
+            recentComments.remove(0);
         }
     }
 }

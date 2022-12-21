@@ -1,5 +1,6 @@
 package org.bori.dtos.builders;
 
+import org.bori.dtos.CommentDTO;
 import org.bori.dtos.NewPollDTO;
 import org.bori.dtos.PollDTO;
 import org.bori.entities.Option;
@@ -27,7 +28,8 @@ public class PollBuilder {
                 poll.getQuestion(),
                 poll.getCode(),
                 poll.getUser().getUsername(),
-                poll.getOptions().stream().map(option -> new PollDTO.OptionToVoteDTO(option.getTitle(), option.getNrVotes())).collect(Collectors.toList())
+                poll.getOptions().stream().map(option -> new PollDTO.OptionToVoteDTO(option.getTitle(), option.getNrVotes())).collect(Collectors.toList()),
+                poll.getRecentComments().stream().map(CommentBuilder::buildCommentDTO).collect(Collectors.toList())
         );
     }
 }

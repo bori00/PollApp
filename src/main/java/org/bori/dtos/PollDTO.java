@@ -3,6 +3,7 @@ package org.bori.dtos;
 import lombok.*;
 
 import javax.validation.constraints.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -20,6 +21,8 @@ public class PollDTO {
     private String userName;
 
     private List<OptionToVoteDTO> options;
+
+    private List<CommentDTO> recentComments;
 
     @Getter
     @AllArgsConstructor

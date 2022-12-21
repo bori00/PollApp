@@ -12,6 +12,7 @@ import de from "react-datepicker";
 import CreatePollModal from "./add-poll-modal";
 import JoinPollModal from "./join-poll-modal";
 import * as API_POLL_MANAGEMENT from "./api/poll-management-api"
+import VotePollModal from "./vote-poll-modal"
 
 function UsersPollsList() {
 
@@ -62,7 +63,7 @@ function UsersPollsList() {
 
             <Button color="info" onClick={() => onJoinPollIntention()}>Join Poll</Button>
 
-            <hr></hr>
+            <hr/>
 
             <h3>My Polls</h3>
             <ListGroup>
@@ -74,19 +75,19 @@ function UsersPollsList() {
                 <APIResponseErrorMessage errorStatus={error.status} error={error.errorMessage} />
             }
 
-            {/*{*/}
-            {/*    selectedDevice !== null &&*/}
-            {/*    <ManagePollModal device={selectedPoll} onClose={() => {setSelectedPoll(null)}}/>*/}
-            {/*}*/}
+            {
+                selectedPoll !== null &&
+                <VotePollModal active={selectedPoll!==null} poll={selectedPoll} onClose={() => {setSelectedPoll(null)}}/>
+            }
 
             {
                 addPollIntention === 1 &&
-                <CreatePollModal onClose={() => {setAddPollIntention(0)}}/>
+                <CreatePollModal active={addPollIntention} onClose={() => {setAddPollIntention(0)}}/>
             }
 
             {
                 joinPollIntention === 1 &&
-                <JoinPollModal onClose={() => {setJoinPollIntention(0)}}/>
+                <JoinPollModal active={joinPollIntention} onClose={() => {setJoinPollIntention(0)}}/>
             }
         </Fragment>
     );
